@@ -1,0 +1,166 @@
+body {
+
+    background: url("../imagens/fundo.avif") no-repeat center center;
+    background-size: cover;
+    font-family: system-ui, -apple-system,Arial, Helvetica, sans-serif;
+
+}
+
+.area-box{
+
+    display: flex;
+    height: 105vh;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.box{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(226, 226, 96);
+    border-radius: 10px;
+    width: 555px;
+    height: 520px ;
+    padding: 35px;
+    margin: 55px;
+
+}
+
+.box form{
+
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+}
+
+
+
+
+.box img{
+
+    width: 160px;
+    height: auto;
+    border-radius: 5px;
+
+}
+
+span{
+
+    font-size: 16px;
+    color: rgb(65, 62, 62);
+    font-weight: bold;
+    font-family: system-ui, -apple-system,Arial, Helvetica, sans-serif;
+
+}
+
+p{
+
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-family: system-ui, -apple-system,Arial, Helvetica, sans-serif;
+
+}
+
+/* --------------- Box2 ---------------- */
+.box2{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(226, 226, 96);
+    border-radius: 10px;
+    width: 355px;
+    height: 320px ;
+    padding: 35px;
+    margin: 55px;
+
+}
+
+.box2 form{
+
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+}
+
+
+.box2 img{
+
+    width: 160px;
+    height: auto;
+    border-radius: 5px;
+    margin-right: 50px;
+
+}
+
+.box2 input{
+
+    margin-top: 10px;
+    background-color: white;
+    padding-left: 10px;
+    color: black; 
+    border: none;
+    height: 65px;
+    outline: none;
+    border-radius: 10px;
+
+}
+
+input::placeholder{
+
+    color: rgb(65, 62, 62);
+    font-size: 14px;
+
+}
+
+form button{
+
+    display: block;
+    background-color: #5568fe;
+    color: white;
+    font-size: 20px;
+    padding: 5px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 135px;
+    margin-left: 110px;
+    margin-bottom: 5px;
+
+}
+
+span{
+
+    font-size: 16px;
+    color: rgb(65, 62, 62);
+    font-weight: bold;
+    font-family: system-ui, -apple-system,Arial, Helvetica, sans-serif;
+
+}
+
+p{
+
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-family: system-ui, -apple-system,Arial, Helvetica, sans-serif;
+
+}
+
+a{
+
+    padding: 5px;
+    cursor: pointer;
+    color: rgb(65, 62, 62);
+    font-size: 15px;
+    margin-top: 10px;
+    width: 95px;
+    margin-left: 150px;
+    text-decoration: none;
+
+}
