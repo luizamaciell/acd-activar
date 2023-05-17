@@ -11,12 +11,14 @@
     <script src="<?= url("/assets/web/js/avisos.js") ?>" async></script>
     <script src="<?= url("/assets/web/js/problema.js") ?>" async></script>
     <script src="<?= url("/assets/web/js/demanda.js") ?>" async></script>
-    <link rel="stylesheet" href="<?= url("/assets/web/css/problema.css"); ?>" />
-    <link rel="stylesheet" href="<?= url("/assets/web/css/demanda.css"); ?>" />
-    <link rel="stylesheet" href="<?= url("/assets/web/css/avisos.css"); ?>" />
-    <link rel="stylesheet" href="<?= url("/assets/web/css/login.css"); ?>" />
-    <link rel="stylesheet" href="<?= url("/assets/web/css/register.css"); ?>" />
-    <link rel="stylesheet" href="<?= url("/assets/web/css/menu.css"); ?>" />
+
+    <?php
+       if($this->section("css")){
+        echo $this->section("css");
+       }
+    ?>
+
+  
   </head>
 
   <body>

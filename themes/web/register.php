@@ -4,6 +4,14 @@ $this->layout("_theme");
 
 ?>
 
+<?php
+  $this->start("css");
+?>
+ <link rel="stylesheet" href="<?= url("/assets/web/css/register.css"); ?>" />
+<?php
+  $this->end();
+?>
+
 
     <section class="area-login">
 

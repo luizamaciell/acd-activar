@@ -5,6 +5,14 @@ $this->layout("_theme");
 
 ?>
 
+<?php
+  $this->start("css");
+?>
+<link rel="stylesheet" href="<?= url("/assets/web/css/menu.css"); ?>" />
+<?php
+  $this->end();
+?>
+
 <header>
       <nav>
         <img src="<?= url("/assets/web/imagens/logo.PNG") ?>" class="logo" >

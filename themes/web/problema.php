@@ -4,6 +4,14 @@ $this->layout("_theme");
 
 ?>
 
+<?php
+  $this->start("css");
+?>
+ <link rel="stylesheet" href="<?= url("/assets/web/css/problema.css"); ?>" />
+<?php
+  $this->end();
+?>
+
     <section class="area-box">
 
         <div class="problems">

@@ -4,6 +4,14 @@ $this->layout("_theme");
 
 ?>
 
+
+<?php
+  $this->start("css");
+?>
+<link rel="stylesheet" href="<?= url("/assets/web/css/avisos.css"); ?>" />
+<?php
+  $this->end();
+?>
    
     <div class="form">
         <div class="envia">
