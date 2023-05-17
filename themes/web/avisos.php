@@ -15,7 +15,8 @@ $this->layout("_theme");
                 <span>Descrição:</span>
                 <input type="text" id="descricao" placeholder="Descrição">
                 <button id="enviar">Enviar</button>
-                <button class="volt">Voltar</button>
+                <a href="<?= url("/") ?>">Voltar</a>
+               
         </div>
     </div>
         
