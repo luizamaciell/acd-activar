@@ -3,83 +3,123 @@
 namespace Source\App;
 
 use League\Plates\Engine;
+use Source\Models\Category;
+use Source\Models\Faq;
+use Source\Models\Plan;
+use Source\Models\Trainer;
 
 class Web
 {
 
     private $view;
+    private $categories;
 
     public function __construct(){
 
         $this->view = new Engine(__DIR__ . "/../../themes/web", "php");
+        $category = new Category();
+        $this->categories = $category->selectAll();
 
     }
 
     public function home()
     {
-        //echo "Olá, Mundo! Home";
   
         echo $this->view->render("home", [
-            "name" => "Laura",
-            "age" => 16
+            "categories" => $this->categories
         ]);
 
     }
 
     public function about()
     {
-        //echo "Olá, Mundo! Sobre";
-        echo $this->view->render("about");
+        $trainer = new Trainer();
+        $trainers = $trainer->selectAll();
+
+        echo $this->view->render("about",[
+            "trainers" => $trainers
+        ]);
 
     }
 
     public function location()
     {
-        echo "Essa é a minha localização!";
+        echo $this->view->render("about");
+    }
+
+    public function schedule()
+    {
+        echo $this->view->render("schedule");
     }
 
     public function blog (){
-        echo "esse é o meu blog bonitinho...";
+        echo $this->view->render("blog");
     }
-
     public function contact (){
-        echo "Olá, esse é o meu contatinho...";
+        echo $this->view->render("contact");
+    } 
+    public function faq () {
+        $faq = new Faq();
+        $faqs = $faq->selectAll();
+     
+        echo $this->view->render("faq",[
+            "faqs" => $faqs
+        ]);
     }
-
-    public function profile (){
-        echo "Esse é o meu perfil legal";
-    }
-
-    public function login()
+   
+    public function register(array $data)
     {
-        echo $this->view->render("login");
+        if(!empty ($data)){
+            $response = json_encode($data);
+            echo $response;
+            return;
+         } 
 
+        echo $this->view->render("register",[
+            "categories" => $this->categories
+        ]);
     }
-
-    public function register()
+    public function login(array $data)
     {
-        echo $this->view->render("register");
-
+        echo $this->view->render("user-auth",[]);
     }
 
-    public function avisos()
+    public function apiFaq (array $data)
     {
-        echo $this->view->render("avisos");
-
+        echo $this->view->render("api-faqs",[]);
     }
 
-    public function problema()
+    public function apiLogin (array $data)
     {
-        echo $this->view->render("problema");
-
+        echo $this->view->render("api-login",[]);
     }
-
-    public function demanda()
+    public function apiPlans (array $data)
     {
-        echo $this->view->render("demanda");
+        echo $this->view->render("api-plans",[]);
+    }
+    public function plans (array $data)
+    {
+        $categories = new Category();
+        $plan = new Plan();
+        $plans = $plan->selectAll();
+
+         if(!empty ($data["categoriesName"])){
+            echo $this->view->render("plans",[
+                "plans" => $plan->selectByCategories($data["categoriesName"]),
+                "categories" => $categories->selectAll()
+            ]);
+            return;
+         } 
+
+        echo $this->view->render("plans",[
+            "plans" => $plans,
+            "categories" => $categories->selectAll()
+        ]);
 
     }
-
-
-
+    public function apiFicha (array $data)
+    {
+        echo $this->view->render("api-ficha",[]);
+    }
+    
 }

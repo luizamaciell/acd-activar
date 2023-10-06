@@ -1,4 +1,5 @@
 <?php
+use CoffeeCode\Uploader\Image;
 
 function url(string $path = null): string
 {
@@ -15,4 +16,6 @@ function url(string $path = null): string
 
     return CONF_URL_BASE;
 }
+
+
 
